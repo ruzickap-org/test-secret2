@@ -1,0 +1,16 @@
+---
+name: tests2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test2:
+    name: Test reusable workflow
+    uses: ruzickap-org/test-secret/.github/workflows/reusable-workflow.yml@main
+    secrets:
+      wiz_client_id: ${{ secrets.WIZ_CLIENT_ID }}
+      wiz_client_secret: ${{ secrets.WIZ_CLIENT_SECRET }}
